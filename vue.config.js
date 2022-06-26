@@ -2,11 +2,11 @@ const path = require("path");
 
 module.exports = {
   devServer: {
-    port: "3000",
-    // overlay: {
-    //   warnings: true,
-    //   errors: true
-    // }
+    port: "7000",
+    overlay: {
+      warnings: true,
+      errors: true
+    }
   },
   chainWebpack: (config) => {
     config.resolve.alias.set(

@@ -1,3 +1,3 @@
-export const setCar = (state, payload) => {
+export const updateCarList = (state, payload) => {
   state.carList.push(payload);
 }

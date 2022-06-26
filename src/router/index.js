@@ -17,6 +17,14 @@ const routes = [
     }
   },
   {
+    path: '/new/:id',
+    name: 'newEdit',
+    component: () => import('@/views/New.vue'),
+    meta: {
+      auth: false
+    }
+  },
+  {
     path: '/new',
     name: 'new',
     component: () => import('@/views/New.vue'),

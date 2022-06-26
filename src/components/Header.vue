@@ -1,31 +1,23 @@
 <template>
-  <b-navbar
-    toggleable="lg"
-    type="light"
-  >
-    <b-navbar-brand
-      class="mx-auto"
-    >
-      <router-link
-        class="navbar-brand nav-brand me-5"
-        to="/"
-      >
-        <p>Home</p>
-      </router-link>
-    </b-navbar-brand>
+  <div class="custom-nav">
 
-    <b-navbar-brand
-      class="mx-auto"
-    >
-      <router-link
-        class="navbar-brand nav-brand me-5"
-        to="/new"
-      >
-        <p>New</p>
-      </router-link>
-    </b-navbar-brand>
+    <b-navbar>
+      <b-navbar-nav>
+        <b-nav-item
+          class="custom-nav-button"
+          href="/"
+        >Home
+        </b-nav-item>
 
-  </b-navbar>
+        <b-nav-item
+          class="custom-nav-button"
+          href="/new"
+        >New
+        </b-nav-item>
+      </b-navbar-nav>
+
+    </b-navbar>
+  </div>
 </template>
 
 <script>

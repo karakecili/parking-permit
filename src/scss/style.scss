@@ -1,4 +1,38 @@
 // Then import Bootstrap an BootstrapVue SCSS files (order is important)
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+// @import '../../node_modules/bootstrap-vue/src/index.scss';
 @import 'utilities/variables';
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: $scrool-1; 
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: $scrool-2; 
+}
+ 
+.custom-nav {
+    padding: 0 30px;
+    box-shadow: 0px 5px 5px $grey;
+    &-button {
+        border: 1px solid $primary;
+        color: $primary !important;
+        margin-right: 10px;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: $primary;
+            color: $white !important;
+        }
+    }
+}
