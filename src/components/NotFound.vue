@@ -1,6 +1,6 @@
 <template>
   <div id="NotFound">
-    <h1>Error 404 - not found.</h1>
+    <h1>{{ $t('notFound.warning') }}</h1>
   </div>
 </template>
 

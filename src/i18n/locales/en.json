@@ -1,0 +1,63 @@
+{
+    "pages": {
+        "home": "Home",
+        "new": "New",
+        "settings": "Settings"
+    },
+    "home": {
+        "plate": "License Plate",
+        "country": "Country",
+        "sDate": "Start Date",
+        "eDate": "End Date",
+        "owner": "Owner",
+        "details": "Details",
+        "dItem": "Delete Item",
+        "uItem": "Update Item"
+    },
+    "new": {
+        "plate": {
+            "label": "Plate:",
+            "description": "Please add a dash(-) between numbers and letters",
+            "placeholder": "Plate",
+            "required": "Plate is required",
+            "isMatch": "Plate is not available in selected country"
+        },
+        "country": {
+            "label": "Country:",
+            "placeholder": "Select One",
+            "required": "Country is required"
+        },
+        "startDate": {
+            "label": "Start Date:",
+            "placeholder": "No start date selected",
+            "required": "Please choose Start Date",
+            "dateMax": "Start Date should be before End Date"
+        },
+        "endDate": {
+            "label": "End Date:",
+            "placeholder": "No end date selected",
+            "required": "Please choose End Date",
+            "dateMin": "Start Date should be before End Date"
+        },
+        "name": {
+            "label": "Owner:",
+            "placeholder": "Enter name"
+        },
+        "submit": "Submit",
+        "reset": "Reset"
+    },
+    "settings": {
+        "settings": "Settings",
+        "close": "Close",
+        "locales": {
+            "language": "Language"
+        },
+        "clearData": {
+            "deleteAll": "Delete All Data",
+            "noReturn": "This process has no return"
+        }
+    },
+    "notFound": {
+        "warning": "Error 404 - not found"
+    }
+}

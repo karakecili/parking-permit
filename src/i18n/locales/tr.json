@@ -1,0 +1,63 @@
+{
+    "pages": {
+        "home": "Anasayfa",
+        "new": "Yeni",
+        "settings": "Ayarlar"
+    },
+    "home": {
+        "plate": "Plaka",
+        "country": "Ülke",
+        "sDate": "Başlangıç Tarihi",
+        "eDate": "Bitiş Tarihi",
+        "owner": "Ad",
+        "details": "Detaylar",
+        "dItem": "Sil",
+        "uItem": "Güncelle"
+    },
+    "new": {
+        "plate": {
+            "label": "Plaka:",
+            "description": "Harfler ile rakamlar arasına çizgi(-) ekleyiniz",
+            "placeholder": "Plaka",
+            "required": "Plaka zorunludur",
+            "isMatch": "Plaka seçilen ülkede uygun değildir"
+        },
+        "country": {
+            "label": "Ülkü:",
+            "placeholder": "Birini seçiniz",
+            "required": "Ülke seçiniz"
+        },
+        "startDate": {
+            "label": "Başlangıç Tarihi:",
+            "placeholder": "Başlangıç Tarihi seçilmedi",
+            "required": "Başlangıç Tarihi zorunludur",
+            "dateMax": "Başlangıç Tarihi Bitiş Tarihinden önce olmalıdır"
+        },
+        "endDate": {
+            "label": "Bitiş Tarihi:",
+            "placeholder": "Bitiş Tarihi seçilmedi",
+            "required": "Bitiş Tarihi zorunludur",
+            "dateMin": "Başlangıç Tarihi Bitiş Tarihinden önce olmalıdır"
+        },
+        "name": {
+            "label": "Ad:",
+            "placeholder": "Ad giriniz"
+        },
+        "submit": "Onayla",
+        "reset": "Temizle"
+    },
+    "settings": {
+        "settings": "Ayarlar",
+        "close": "Kapat",
+        "locales": {
+            "language": "Dil"
+        },
+        "clearData": {
+            "deleteAll": "Tüm bilgiyi temizleyiniz",
+            "noReturn": "Bu işlemin dönüşü yoktur"
+        }
+    },
+    "notFound": {
+        "warning": "404 - sayfa bulunamadı"
+    }
+}

@@ -6,13 +6,13 @@
       @reset="onReset"
     >
       <b-form-group
-        label="Plate:"
-        description="Please add a dash(-) between numbers and letters"
+        :label="$t('new.plate.label')"
+        :description="$t('new.plate.description')"
         class="mb-2"
       >
         <b-form-input
           v-model="form.plate"
-          placeholder="Plate"
+          :placeholder="$t('new.plate.placeholder')"
           :state="$v.form.plate.$dirty ? !$v.form.plate.$anyError : null"
           @blur="$v.form.plate.$touch()"
         />
@@ -21,19 +21,19 @@
             v-if="!$v.form.plate.required"
             :state="$v.form.plate.required"
           >
-            Plate is required
+            {{ $t('new.plate.required') }}
           </b-form-invalid-feedback>
           <b-form-invalid-feedback
             v-else-if="!$v.form.plate.isMatch"
             :state="$v.form.plate.isMatch"
           >
-            Plate is not available in selected country
+            {{ $t('new.plate.isMatch') }}
           </b-form-invalid-feedback>
         </div>
       </b-form-group>
 
       <b-form-group
-        label="Country:"
+        :label="$t('new.country.label')"
         class="mb-2"
       >
         <b-form-select
@@ -46,7 +46,9 @@
             selected
             disabled
             value=""
-          >Select One</option>
+          >
+            {{ $t('new.country.placeholder') }}
+          </option>
           <option
             v-for="country in getCountries"
             :key="country.code"
@@ -59,17 +61,18 @@
             v-if="!$v.form.country.isNull"
             :state="$v.form.country.isNull"
           >
-            Country is required
+            {{ $t('new.country.required') }}
           </b-form-invalid-feedback>
         </div>
       </b-form-group>
 
       <b-form-group
-        label="Start Date:"
+        :label="$t('new.startDate.label')"
         class="mb-2"
       >
         <b-form-datepicker
           v-model="form.startDate"
+          :placeholder="$t('new.startDate.placeholder')"
           :state="$v.form.startDate.$dirty ? !$v.form.startDate.$anyError : null"
           @blur="$v.form.startDate.$touch()"
         />
@@ -78,23 +81,24 @@
             v-if="!$v.form.startDate.required"
             :state="$v.form.startDate.required"
           >
-            Please choose Start Date
+            {{ $t('new.startDate.required') }}
           </b-form-invalid-feedback>
           <b-form-invalid-feedback
             v-else-if="!$v.form.startDate.dateMax"
             :state="$v.form.startDate.dateMax"
           >
-            Start Date should be before End Date
+            {{ $t('new.startDate.dateMax') }}
           </b-form-invalid-feedback>
         </div>
       </b-form-group>
 
       <b-form-group
-        label="End Date:"
+        :label="$t('new.endDate.label')"
         class="mb-2"
       >
         <b-form-datepicker
           v-model="form.endDate"
+          :placeholder="$t('new.endDate.placeholder')"
           :state="$v.form.endDate.$dirty ? !$v.form.endDate.$anyError : null"
           @blur="$v.form.endDate.$touch()"
         />
@@ -103,24 +107,24 @@
             v-if="!$v.form.endDate.required"
             :state="$v.form.endDate.required"
           >
-            Please choose End Date
+            {{ $t('new.endDate.required') }}
           </b-form-invalid-feedback>
           <b-form-invalid-feedback
             v-else-if="!$v.form.endDate.dateMin"
             :state="$v.form.endDate.dateMin"
           >
-            Start Date should be before End Date
+            {{ $t('new.endDate.dateMin') }}
           </b-form-invalid-feedback>
         </div>
       </b-form-group>
 
       <b-form-group
-        label="Owner:"
+        :label="$t('new.name.label')"
         class="mb-4"
       >
         <b-form-input
           v-model="form.name"
-          placeholder="Enter name"
+          :placeholder="$t('new.name.placeholder')"
         />
       </b-form-group>
 
@@ -128,13 +132,13 @@
         type="submit"
         variant="primary"
         class="m-2"
-      >Submit</b-button>
+      >{{ $t('new.submit') }}</b-button>
       <b-button
         v-show="!isEdit"
         type="reset"
         variant="danger"
         class="m-2"
-      >Reset</b-button>
+      >{{ $t('new.reset') }}</b-button>
     </b-form>
   </div>
 </template>
@@ -191,17 +195,15 @@ export default {
             this.$router.push({path: '/'});
           })
         }
-
       }
     },
     onReset() {
-      // Reset our form values
       this.form.plate = "";
-      this.form.country = null;
+      this.form.country = "";
       this.form.name = "";
       this.form.startDate = "";
       this.form.endDate = "";
-      // Trick to reset/clear native browser form validation state
+
       this.show = false;
       this.$v.form.$reset()
       this.$nextTick(() => {

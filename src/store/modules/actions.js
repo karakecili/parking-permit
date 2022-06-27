@@ -1,7 +1,8 @@
 import axios from "axios";
 
-export const initApp = ({ dispatch }) => {
+export const initApp = ({ state, dispatch }) => {
   dispatch("getCarsData")
+  state.Lang = localStorage.getItem("Lang") ?? "en"
 }
 
 export const setCarData = ({ dispatch }, payload) => {
@@ -39,6 +40,14 @@ export const updateCarData = ({ commit }, key, payload) => {
 
 export const removeCarData = ({ dispatch }, payload) => {
   axios.delete("car-list/" + payload + ".json")
+    .then(() => {
+      dispatch("getCarsData")
+    }
+  )
+}
+
+export const removeCarDataAll = ({ dispatch }) => {
+  axios.delete("car-list.json")
     .then(() => {
       dispatch("getCarsData")
     })

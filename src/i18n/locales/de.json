@@ -1,0 +1,63 @@
+{
+    "pages": {
+        "home": "Hauptseite",
+        "new": "Neu",
+        "settings": "Einstellung"
+    },
+    "home": {
+        "plate": "Kennzeichen",
+        "country": "Land",
+        "sDate": "Startdatum",
+        "eDate": "Enddatum",
+        "owner": "Name",
+        "details": "Einzelheiten",
+        "dItem": "Löschen der Aufzeichnung",
+        "uItem": "Aktualisieren der Aufzeichnung"
+    },
+    "new": {
+        "plate": {
+            "label": "Kennzeichen:",
+            "description": "Der Bindestrich zwischen den Buchstaben und Nummern auf dem Kennzeichen",
+            "placeholder": "Kennzeichen",
+            "required": "Das Kennzeichen ist verpflichtend",
+            "isMatch": "Das Kennzeichen ist für dieses Land nicht geeignet"
+        },
+        "country": {
+            "label": "Land:",
+            "placeholder": "Sucht eins aus",
+            "required": "Die Auswahl des Landes ist verpflichtend"
+        },
+        "startDate": {
+            "label": "Startdatum:",
+            "placeholder": "Das Startdatum ist noch nicht bestimmt",
+            "required": "Das Setzen des Startdatums ist verpflichtend",
+            "dateMax": "Das Startdatum muss vor dem Enddatum sein"
+        },
+        "endDate": {
+            "label": "Enddatum:",
+            "placeholder": "Das Enddatum ist noch nicht bestimmt",
+            "required": "Das Setzen des Enddatums ist verpflichtend",
+            "dateMin": "Das Startdatum muss vor dem Enddatum sein"
+        },
+        "name": {
+            "label": "Name:",
+            "placeholder": "Name eingeben"
+        },
+        "submit": "Einreichen",
+        "reset": "Neustarten"
+    },
+    "settings": {
+        "settings": "Einstellung",
+        "close": "Nah",
+        "locales": {
+            "language": "Sprache"
+        },
+        "clearData": {
+            "deleteAll": "Die ganze datei löschen",
+            "noReturn": "Dieser Schritt ist unwiderruflich"
+        }
+    },
+    "notFound": {
+        "warning": "404 nicht gefunden."
+    }
+}

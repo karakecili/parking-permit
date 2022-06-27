@@ -17,6 +17,7 @@ export const store = new Vuex.Store({
       { name: "France", code: "FR", rgx: /^[A-Z]{2}-{0,1}[0-9]{3}-{0,1}[A-Z]{2}/ },
       { name: "Switzerland", code: "CH", rgx: /^[A-Z]{2}-{0,1}[0-9]{1,6}/ },
     ],
+    Lang: "en",
   },
   getters,
   mutations,

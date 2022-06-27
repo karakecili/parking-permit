@@ -7,7 +7,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "@vue/eslint-config-airbnb": "^5.3.0",
@@ -19,6 +20,8 @@
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^7.0.1",
     "vue": "^2.6.14",
+    "vue-flag-icon": "^2.1.0",
+    "vue-i18n": "^8.27.0",
     "vue-router": "^3.5.1",
     "vuelidate": "^0.7.7",
     "vuex": "^3.6.2"

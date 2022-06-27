@@ -3,10 +3,10 @@ const path = require("path");
 module.exports = {
   devServer: {
     port: "7000",
-    overlay: {
-      warnings: true,
-      errors: true
-    }
+    // overlay: {
+    //   warnings: true,
+    //   errors: true
+    // }
   },
   chainWebpack: (config) => {
     config.resolve.alias.set(
@@ -15,6 +15,7 @@ module.exports = {
     );
   },
   lintOnSave: true,
+  // publicPath: process.env.NODE_ENV === "production" ? "/parking-permit/" : "/",
   css: {
     loaderOptions: {
       sass: {

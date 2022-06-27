@@ -13,6 +13,7 @@
           variant="warning"
           size="sm"
           class="m-1 text-white"
+          :title="$t('home.uItem')"
           @click="openUpdate(row.item)"
         >
           <b-icon-eye-fill />
@@ -22,6 +23,7 @@
           variant="danger"
           size="sm"
           class="m-1"
+          :title="$t('home.dItem')"
           @click="removeItem(row.item)"
         >
           <b-icon-trash-fill />
@@ -37,29 +39,31 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      fields: [
-        "plate",
-        { key: 'country', label: 'Country',
+    };
+  },
+  computed: {
+    fields() {
+      return [
+        { key: 'plate', label: this.$t('home.plate') },
+        { key: 'country', label: this.$t('home.country'),
           formatter: (value) => {
             return this.$store.getters.getCountries.find(x => x.code == value).name
           }
         },
-        { key: 'startDate', label: 'Start Date',
+        { key: 'startDate', label: this.$t('home.sDate'),
           formatter: (value) => {
             return value !== "" ? new Date(value).toLocaleDateString() : ""
           }
         },
-        { key: 'endDate', label: 'End Date',
+        { key: 'endDate', label: this.$t('home.eDate'),
           formatter: (value) => {
             return value !== "" ? new Date(value).toLocaleDateString() : ""
           }
         },
-        { key: 'name', label: 'Owner', },
-        { key: 'Details', label: 'Details', },
-      ],
-    };
-  },
-  computed: {
+        { key: 'name', label: this.$t('home.owner') },
+        { key: 'Details', label: this.$t('home.details') },
+      ]
+    },
     ...mapGetters(["getCars"]),
   },
   created() {
