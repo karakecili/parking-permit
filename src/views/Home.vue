@@ -1,12 +1,26 @@
 <template>
   <div class="m-2">
+    <b-row class="my-2">
+      <b-col sm="2">
+        <label for="filterInput">{{ $t("search.search") }}:</label>
+      </b-col>
+      <b-col sm="10">
+        <b-form-input id="filterInput" v-model="filter" :placeholder="$t('search.placeholder')" />
+      </b-col>
+    </b-row>
+
+    <br />
+
     <b-table
       hover
       striped
       bordered
       class="table-light"
-      :items="getCars"
+      :items="filter == '' ? getCars : getCarsFiltered(filter.toLocaleUpperCase())"
       :fields="fields"
+      label-sort-asc=""
+      label-sort-desc=""
+      label-sort-clear=""
     >
       <template #cell(Details)="row">
         <b-button
@@ -39,43 +53,53 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
+      filter: "",
     };
   },
   computed: {
     fields() {
       return [
-        { key: 'plate', label: this.$t('home.plate') },
-        { key: 'country', label: this.$t('home.country'),
+        { key: "plate", label: this.$t("home.plate"), sortable: true },
+        {
+          key: "country",
+          label: this.$t("home.country"),
+          sortable: true,
           formatter: (value) => {
-            return this.$store.getters.getCountries.find(x => x.code == value).name
-          }
+            return this.$store.getters.getCountries.find((x) => x.code == value).name;
+          },
         },
-        { key: 'startDate', label: this.$t('home.sDate'),
+        {
+          key: "startDate",
+          label: this.$t("home.sDate"),
+          sortable: true,
           formatter: (value) => {
-            return value !== "" ? new Date(value).toLocaleDateString() : ""
-          }
+            return value !== "" ? new Date(value).toLocaleDateString() : "";
+          },
         },
-        { key: 'endDate', label: this.$t('home.eDate'),
+        {
+          key: "endDate",
+          label: this.$t("home.eDate"),
+          sortable: true,
           formatter: (value) => {
-            return value !== "" ? new Date(value).toLocaleDateString() : ""
-          }
+            return value !== "" ? new Date(value).toLocaleDateString() : "";
+          },
         },
-        { key: 'name', label: this.$t('home.owner') },
-        { key: 'Details', label: this.$t('home.details') },
-      ]
+        { key: "name", label: this.$t("home.owner"), sortable: true },
+        { key: "Details", label: this.$t("home.details") },
+      ];
     },
-    ...mapGetters(["getCars"]),
+    ...mapGetters(["getCars", "getCarsFiltered"]),
   },
   created() {
-      this.$store.dispatch("initApp");
+    this.$store.dispatch("initApp");
   },
   methods: {
     openUpdate(item) {
-      this.$router.push({path: '/new/' + item.key});
+      this.$router.push({ path: "/new/" + item.key });
     },
     removeItem(item) {
-      this.$store.dispatch("removeCarData", item.key)
-    }
+      this.$store.dispatch("removeCarData", item.key);
+    },
   },
 };
 </script>

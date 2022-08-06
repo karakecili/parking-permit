@@ -21,8 +21,8 @@ module.exports = {
       sass: {
         additionalData: `
           @import "@/scss/style.scss";
-        `
-      }
-    }
-  }
-}
+        `,
+      },
+    },
+  },
+};
